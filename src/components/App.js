@@ -10,6 +10,8 @@ import $ from 'jquery';
 
 import CommunityList from './CommunityList';
 import EventsList from './EventsList';
+import PopularList from './PopularList';
+import NewsList from './NewsList';
 
 class App extends Component {
 
@@ -29,7 +31,7 @@ class App extends Component {
 
     $.when(
         $.get("/data/popular.json"),
-        $.get("/data/photobooth.json"),
+        $.get("/data/news.json"),
         $.get("/data/events.json"),
         $.get("//www.reddit.com/r/webarebears/new.json?limit=10")
 
@@ -68,7 +70,7 @@ class App extends Component {
 
         <div className="summaryBg">
           <div className="container">
-            <div className="wow fadeInLeft col s12 center-align scrollspy" id="About">
+            <div className="wow fadeInLeft col s12 center-align scrollspy" id="about">
               <div className="col s12 spacer-small"></div>
               <h1>About</h1>
 
@@ -105,7 +107,22 @@ class App extends Component {
           </div>
         </div>
 
-        <div className="photoBg" id="photos">
+        <div className="newsBg" id="news">
+                    <div className="wow fadeInLeft col s12 center-align scrollspy" id="about">
+                      <div className="col s12 spacer-small"></div>
+                      <h1>Recent News</h1>
+
+                      <div className="col l12 m12 s12 no-padding">
+                        <NewsList data={this.state.news} />
+                      </div>
+
+                    </div>
+
+                    <div className="col s12 spacer-small"></div>
+
+        </div>
+
+        <div className="photoBg" id="events">
             <div className="wow fadeInLeft col s12 center-align scrollspy" id="about">
               <div className="col s12 spacer-small"></div>
               <h1>Events</h1>
@@ -118,6 +135,27 @@ class App extends Component {
 
             <div className="col s12 spacer-small"></div>
 
+        </div>
+
+        <div className="parallax-container">
+           <div className="parallax"><img src="http://placehold.it/1920x1080" alt="Banner" /></div>
+           <h2>Parallax</h2>
+        </div>
+
+        <div className="popularBg">
+                  <div className="container">
+                    <div className="wow fadeInLeft col s12 center-align scrollspy" id="popular">
+
+                      <div className="col s12 spacer-small"></div>
+
+                      <h1>Most Popular</h1>
+
+                      <PopularList data={this.state.mostPopular} />
+                    </div>
+
+                    <div className="col s12 spacer-small"></div>
+
+                  </div>
         </div>
 
         <div className="parallax-container">

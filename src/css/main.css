@@ -219,8 +219,8 @@ p {
 }
 
 .communityBg {
-    background: no-repeat #000 scroll;
-    color:white;
+    background: no-repeat #fff scroll;
+    color:#000;
     margin-bottom: -2em;
     position: relative;
 
