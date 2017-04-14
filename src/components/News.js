@@ -13,7 +13,8 @@ class News extends Component {
 
                     <div className="titleIt">
                         <p>{this.props.title}</p>
-                        <em className="timeReddit"><Moment unix fromNow>{this.props.time}</Moment></em>
+                        <p dangerouslySetInnerHTML={{__html: this.props.description}} />
+                        <p><em className=""><Moment unix fromNow>{this.props.time}</Moment></em></p>
                     </div>
             </div>
         );

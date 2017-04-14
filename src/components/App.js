@@ -26,19 +26,19 @@ class App extends Component {
   loadData () {
 
     $.when(
-        $.get("/data/popular.json"),
+        $.get("//jarrodsampson.com/api/frameworks/frameworks.php?format=json&version=v1&query=javascript"),
         $.get("//admin.jarrodsampson.com/jsonapi/node/news_release?page[limit]=10"),
         $.get("/data/events.json"),
         $.get("//www.reddit.com/r/javascript/new.json?limit=10")
 
     ).then(function(mostPopular, news, events, community) {
         this.setState({
-            mostPopular: mostPopular[0],
+            mostPopular: mostPopular[0].data,
             news: news[0].data,
             events: events[0],
             community: community[0].data.children
         });
-        console.log(mostPopular[0]);
+        console.log(mostPopular[0].data);
         console.log(news[0].data);
         console.log(events[0]);
         console.log(community[0].data.children);
