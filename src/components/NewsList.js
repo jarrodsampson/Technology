@@ -10,9 +10,11 @@ class NewsList extends Component {
             //console.log(fanArt);
             return (
                 <News
+                    title={item.attributes.title}
                     image={item.image}
-                    description={item.description}
-                    key={item.image}
+                    description={item.attributes.body.value}
+                    time={item.attributes.created}
+                    key={item.attributes.created}
                 />
             );
         }, this);
