@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
-import '../css/animate.css';
-import '../css/main.css';
-import '../css/owl.carousel.min.css';
-import '../css/owl.theme.default.min.css';
-import '../css/swipebox.css';
+import '../css/compiled/bundle.css';
 
 import $ from 'jquery';
 
@@ -31,21 +27,21 @@ class App extends Component {
 
     $.when(
         $.get("/data/popular.json"),
-        $.get("/data/news.json"),
+        $.get("//admin.jarrodsampson.com/jsonapi/node/news_release?page[limit]=10"),
         $.get("/data/events.json"),
-        $.get("//www.reddit.com/r/webarebears/new.json?limit=10")
+        $.get("//www.reddit.com/r/javascript/new.json?limit=10")
 
     ).then(function(mostPopular, news, events, community) {
-      this.setState({
-        mostPopular: mostPopular[0],
-        news: news[0],
-        events: events[0],
-        community: community[0].data.children
-      });
-      console.log(mostPopular[0]);
-      console.log(news[0]);
-      console.log(events[0]);
-      console.log(community[0].data.children);
+        this.setState({
+            mostPopular: mostPopular[0],
+            news: news[0].data,
+            events: events[0],
+            community: community[0].data.children
+        });
+        console.log(mostPopular[0]);
+        console.log(news[0].data);
+        console.log(events[0]);
+        console.log(community[0].data.children);
 
     }.bind(this));
 
@@ -103,7 +99,7 @@ class App extends Component {
             </p>
           </div>
           <div className="modal-footer">
-            <a className=" modal-action modal-close waves-effect waves-green btn-flat">Got It!</a>
+            <a className="modal-action modal-close waves-effect waves-green btn-flat">Got It!</a>
           </div>
         </div>
 
@@ -112,9 +108,9 @@ class App extends Component {
                       <div className="col s12 spacer-small"></div>
                       <h1>Recent News</h1>
 
-                      <div className="col l12 m12 s12 no-padding">
-                        <NewsList data={this.state.news} />
-                      </div>
+                        <div className="col l12 m12 s12 no-padding">
+                            <NewsList data={this.state.news} />
+                        </div>
 
                     </div>
 

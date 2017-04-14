@@ -16,6 +16,14 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "debug": "^2.6.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-less": "^3.3.0",
+    "gulp-util": "^3.0.8",
+    "gutil": "^1.6.4",
     "react-scripts": "0.9.5",
     "redux-devtools": "^3.3.2"
   },
