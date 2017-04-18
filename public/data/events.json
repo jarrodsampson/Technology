@@ -1,26 +1,26 @@
 [
   {
-    "image": "dum1.png",
-    "description": "Freaked Out!"
+    "image": "ev1.jpg",
+    "description": "Downtown Dev Meeting"
   },
   {
-    "image": "dum2.png",
-    "description": "Groovin' to some Tunes"
+    "image": "ev2.jpg",
+    "description": "Panel at the Roost"
   },
   {
-    "image": "dum3.png",
-    "description": "Short-Circuited"
+    "image": "ev3.jpg",
+    "description": "E3 Madness"
   },
   {
-    "image": "dum4.png",
-    "description": "My Space"
+    "image": "ev4.jpg",
+    "description": "TechStars Makes Debut"
   },
   {
-    "image": "dum5.png",
-    "description": "In the Zone"
+    "image": "ev5.jpg",
+    "description": "Nokia buys Bing for $516m"
   },
   {
-    "image": "dum6.png",
-    "description": "Kicking some butt!"
+    "image": "ev6.jpg",
+    "description": "Google Helping HVAC"
   }
 ]
