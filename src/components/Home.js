@@ -46,8 +46,6 @@ class Home extends Component {
             console.log(events[0]);
             console.log(community[0].data.children);
 
-            window.Materialize.Toast("ok");
-
         }.bind(this));
 
     }
