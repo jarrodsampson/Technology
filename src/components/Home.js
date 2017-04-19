@@ -15,6 +15,7 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
+        // TODO: States to REDUX
         this.state = {
             mostPopular: [],
             community: [],
@@ -30,11 +31,12 @@ class Home extends Component {
 
         $.when(
             $.get("//jarrodsampson.com/api/frameworks/frameworks.php?format=json&version=v1&query=javascript"),
-            $.get("//admin.jarrodsampson.com/jsonapi/node/news_release?page[limit]=10"),
+            $.get("//admin.jarrodsampson.com/jsonapi/node/news_release?page[limit]=10&sort[sort-created][path]=created&sort[sort-created][direction]=DESC"),
             $.get("/data/events.json"),
             $.get("//www.reddit.com/r/javascript/new.json?limit=10")
 
         ).then(function(mostPopular, news, events, community) {
+            // TODO: States to REDUX
             this.setState({
                 mostPopular: mostPopular[0].data,
                 news: news[0].data,
@@ -89,10 +91,17 @@ class Home extends Component {
 
                 <div className="videoMain">
 
-                    <video id="self1" className="html5-video player" width="100%" loop="true" autoPlay="true" muted>
-                        <source src="media/intro.mp4" width="100%" type="video/mp4">
-                        </source>
-                    </video>
+                    <div id="homeTop">
+                        <video id="self1" className="html5-video player" width="100%" loop="true" autoPlay="true" muted>
+                            <source src="media/intro.mp4" width="100%" type="video/mp4">
+                            </source>
+                        </video>
+                        <div className="col l12 m12 s12 center">
+                            <a href="#about" className="explore tooltipped" data-tooltip="Learn More" data-position="top">
+                                <i className="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -216,6 +225,7 @@ class Home extends Component {
                     </div>
                 </div>
 
+                {/*
                 <div className="contactBg">
                     <div className="row wow fadeInLeft col s12 center-align scrollspy" id="contact">
                         <div className="col s12 spacer-small"></div>
@@ -231,10 +241,7 @@ class Home extends Component {
                         <div className="col s12 spacer-small"></div>
 
                     </div>
-                </div>
-
-
-
+                </div> */}
 
             </div>
         );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../css/compiled/bundle.css';
 
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 // http://recharts.org/#/en-US/guide/customize
 
 class Charts extends Component {

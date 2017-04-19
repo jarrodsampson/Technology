@@ -1,45 +1,42 @@
+@solid_white: #fff;
+@solid_black: #000;
+@community_arrow: #26a69a;
+@community_hovered: #26c6da;
 
+/* headroom css */
 .side-nav {
   min-height: 1000px;
-  z-index:998;
+  z-index: 998;
+  img {
+    max-width: 100%;
+  }
 }
 
-nav .button-collapse {
-  padding-left: 1em;
+nav {
+  .button-collapse {
+    padding-left: 1em;
+  }
+  .sideNav {
+    a.active {
+      background: rgba(38,166,154, 0.9);
+      color: @solid_white;
+    }
+    li {
+      a {
+        &:hover {
+          background: rgba(38,166,154, 0.2);
+          color: @solid_black;
+        }
+      }
+    }
+  }
+  .brand-logo {
+    padding-left: .5em;
+  }
 }
-
-.side-nav img {
-  max-width: 100%;
-}
-
 .active {
   background: rgba(0,0,0,0.2);
 }
-
-nav .sideNav a.active {
-  background: rgba(38,166,154, 0.9);
-  color:white;
-}
-
-nav .sideNav li a:hover {
-  background: rgba(38,166,154, 0.2);
-  color:black;
-}
-
-.spacer-medium {
-  width: 100%;
-  height: 100px;
-}
-
-.spacer-small {
-  width: 100%;
-  height: 60px;
-}
-.spacer-x-small {
-  width: 100%;
-  height: 20px;
-}
-
 .scroll-top {
   position: fixed;
   bottom: 1em;
@@ -51,322 +48,223 @@ nav .sideNav li a:hover {
   padding: 0 0 0 11px;
   display: none;
   z-index: 9999;
-}
-.scroll-top i {
-  color: white;
-  font-size: 44pt;
+  i {
+    color: @solid_white;
+    font-size: 44pt;
+  }
 }
 
-/* headroom css */
-
+// for headroom css
 .slide {
   -webkit-transition: all .25s ease-in-out;
   -moz-transition: all .25s ease-in-out;
   -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out
+  transition: all .25s ease-in-out;
 }
 .slide--reset {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
-  transform: translateY(0)
+  transform: translateY(0);
 }
 .slide--up {
   -webkit-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
-  transform: translateY(-100%)
+  transform: translateY(-100%);
 }
 
-nav .brand-logo {
-  padding-left:.5em;
+.brand-logo {
+  img {
+    width: 95px;
+    padding: 8px;
+  }
 }
-
-.brand-logo img {
-  width: 95px;
-  padding: 8px;
+.topnav {
+  li {
+    a {
+      text-transform: uppercase;
+    }
+  }
 }
-
-.topnav li a {
-  text-transform: uppercase;
-}
-
 .videoMain {
   width: 100%;
   max-height: 500px;
-  background: #000;
+  background: @solid_black;
   background-size: cover;
   overflow: hidden;
   z-index: -4;
-  margin-top: -6.5em;
+  margin-top: -0.5em;
 }
-
-.parallax-container .left, .parallax-container .right {
-  background: rgba(0,0,0,0.6);
-  color: white;
-  position: absolute;
-  width: 100%;
-  bottom: -0.5em;
-  left: 0;
-  padding: .5em 1em 0.5em 1em;
+.parallax-container {
+  h2 {
+    background: rgba(0,0,0,0.6);
+    color: @solid_white;
+    position: absolute;
+    width: 100%;
+    bottom: -0.5em;
+    left: 0;
+    padding: 0.5em 0 0.5em 1em;
+    a {
+      color: @solid_white;
+    }
+  }
 }
-
-.parallax-container .left {
-  text-align: left;
-}
-
-.parallax-container .right {
-  text-align: right;
-}
-
 p {
   font-size: 14pt;
   line-height: 2.5em;
 }
-
 .fullText {
   position: absolute;
   right: 1em;
-  color: #26a69a;
+  color: @community_arrow;
+  &:hover {
+    -moz-animation: spinnerRotate 1s infinite;
+    -webkit-animation: spinnerRotate 1s infinite;
+    animation: spinnerRotate 1s infinite;
+    color: @community_hovered;
+  }
 }
-
-.fullText:hover {
-  -moz-animation: spinnerRotate 1s infinite;
-  -webkit-animation: spinnerRotate 1s infinite;
-  animation: spinnerRotate 1s infinite;
-  color: #26c6da;
-}
-
 .timeReddit {
   position: absolute;
-  right:5em;
+  right: 5em;
   transition: all .5s ease-in-out;
   -webkit-transition: all .5s ease-in-out;
   -moz-transition: all .5s ease-in-out;
+  &:hover {
+    color: @community_hovered;
+  }
 }
-
-.timeReddit:hover {
-  color: #26c6da;
+.bumpDown {
+  margin-top: 1em; // scalability within the element.
 }
-
-@-webkit-keyframes spinnerRotate
-{
-  from{-webkit-transform:rotate(0deg);}
-  to{-webkit-transform:rotate(360deg);}
+img {
+  max-width: 100%;
 }
-@-moz-keyframes spinnerRotate
-{
-  from{-moz-transform:rotate(0deg);}
-  to{-moz-transform:rotate(360deg);}
+.container {
+  width: 90% !important;
 }
-@-ms-keyframes spinnerRotate
-{
-  from{-ms-transform:rotate(0deg);}
-  to{-ms-transform:rotate(360deg);}
+#homeTop {
+  position: relative;
 }
-
-.collection a.collection-item {
-  color:black;
+.explore {
+  position: absolute;
+  z-index: 103;
+  bottom: 1.5em;
+  font-size: 24pt;
+  color: @solid_black;
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
 }
-
+.collection {
+  a.collection-item {
+    color: @solid_black;
+    background: rgba(255,255,255,0.9);
+    &:hover {
+      background: rgba(255,255,255,1);
+    }
+  }
+}
 .titleIt {
   background: rgba(0, 0, 0, 0.8);
   position: absolute;
   width: 100%;
   bottom: 0;
-  color: white;
+  color: @solid_white;
   height: 100px;
   transition: .6s all;
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); // functional notation for specific curve
+  &:hover {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    font-size: 20pt;
+  }
+  p {
+    padding-top: 0;
+    transition: .6s all;
+  }
 }
-.titleIt:hover {
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  font-size: 20pt;
+.owl-carousel {
+  .owl-item {
+    margin: 0 0.5em 0 0.5em;
+  }
 }
-.titleIt p {
-  padding-top: 0.5em;
-  transition: .6s all;
-}
-.titleIt p:hover {
-
-}
-
-.owl-carousel .owl-item {
-  margin: 0 0.5em 0 0.5em;
-}
-
 .summaryBg {
   background: url(../../../public/images/art3.jpg) no-repeat top center;
-  background-size:cover;
+  background-size: cover;
 }
-
-.jennyBg {
-  background: #000;
-  color:white;
-  margin-bottom: -3em;
-}
-
 .descriptionBg {
-  background: #000;
-  background-size:cover;
+  background: @solid_black;
+  background-size: cover;
   height: 530px;
 }
-
 .descriptionDetails {
   background: rgba(0,0,0,0.5);
   border-radius: 10px;
-  color: white;
+  color: @solid_white;
   padding: 0 1em 0 1em;
 }
-
 .communityBg {
-  background: no-repeat #fff scroll;
-  color:#000;
+  background: no-repeat @solid_white scroll;
+  color: @solid_black;
   margin-bottom: -2em;
   position: relative;
-
 }
-
-.collection a.collection-item {
-  background: rgba(255,255,255,0.9)
+.floatImage {
+  img {
+    max-width: 171px;
+    position: absolute;
+    bottom: -9em;
+    right: 0;
+  }
 }
-
-.collection a.collection-item:hover {
-  background: rgba(255,255,255,1)
-}
-
-.floatImage img {
-  max-width: 171px;
-  position: absolute;
-  bottom: -9em;
-  right: 0em;
-}
-
 @media(max-width:992px) {
   .timeReddit {
     position: relative;
     right: auto;
   }
-
   .fullText {
     position: absolute;
     right: 0.5em;
-    color: #26a69a;
+    color: @community_arrow;
+  }
+  .parallax-container {
+    h2 {
+      background: rgba(0,0,0,0.6);
+      color: @solid_white;
+      position: absolute;
+      width: 100%;
+      bottom: -1em;
+      left: 0;
+      padding: 0.5em 0 0.5em 1em;
+      font-size: 18pt;
+      a {
+        color: @solid_white;
+      }
+    }
+  }
+  .summaryBg {
+    margin-top: -1em;
   }
 }
-
-
-
 @media(max-width:640px) {
-  .brand-logo img {
-    width: 145px;
+  .brand-logo {
+    img {
+      width: 85px;
+    }
   }
-}
-
-/* top slider */
-
-.video-res {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background: black;
-  background-size: cover;
-}
-
-.video-overlay {
-  background:rgba(0,0,0,0.2);
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-}
-.superBump {
-  width:100%;
-  height:100px;
-}
-
-.text {
-  background:rgba(0,0,0,0.4);
-  border-radius:10px;
-  color: white;
-  padding: 2em
-}
-
-.midButton {
-  margin-top: -6em;
-}
-
-.hangLeft {
-  position: absolute;
-  top: 35%;
-  left: 5%;
-  height: 100px !important;
-  width: 100px !important;
-}
-
-.hangRight {
-  position: absolute;
-  top: 35%;
-  right: 5%;
-  height: 100px !important;
-  width: 100px !important;
-}
-
-.btn-floating i {
-  font-size: 5.6rem;
-  line-height: 95.5px !important;
-}
-
-.btn-floating:hover {
-  -moz-animation: spinnerRotate .5s;
-  -webkit-animation: spinnerRotate .5s;
-  animation: spinnerRotate .5s;
-}
-
-@-webkit-keyframes spinnerRotate
-{
-  from{-webkit-transform:rotate(0deg);}
-  to{-webkit-transform:rotate(360deg);}
-}
-@-moz-keyframes spinnerRotate
-{
-  from{-moz-transform:rotate(0deg);}
-  to{-moz-transform:rotate(360deg);}
-}
-@-ms-keyframes spinnerRotate
-{
-  from{-ms-transform:rotate(0deg);}
-  to{-ms-transform:rotate(360deg);}
-}
-
-.photoBg {
-}
-
-.parallax-container h2{
-
-  background: rgba(0,0,0,0.6);
-  color: white;
-  position: absolute;
-  width: 100%;
-  bottom: -0.5em;
-  left: 0;
-  padding: 0.5em 0em 0.5em 1em;
-}
-
-.bumpDown {
-  margin-top:1em;
-}
-
-img {
-  max-width:100%;
+  .parallax-container {
+    height: 300px;
+  }
+  .explore {
+    bottom: 0;
+  }
+  .owl-carousel {
+    .owl-item {
+      margin: 0 0 0 0;
+    }
+  }
+  h1 {
+    // let rem units to pixel value be determined by the font size of the html element
+    font-size: 3.2rem;
+  }
 }
