@@ -2,4 +2,3 @@
 node_modules/
 .gitignore
 build/
-src/css/compiled/

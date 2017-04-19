@@ -8,10 +8,10 @@ class News extends Component {
         return (
             <div>
                     <img
-                        src="http://placehold.it/1080x576"
+                        src="images/newsbg.jpg"
                         alt={this.props.description} />
 
-                    <div className="titleIt">
+                    <div className="titleItMedium">
                         <p>{this.props.title}</p>
                         <p dangerouslySetInnerHTML={{__html: this.props.description}} />
                         <p><em className=""><Moment unix fromNow>{this.props.time}</Moment></em></p>

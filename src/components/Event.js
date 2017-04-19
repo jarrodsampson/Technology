@@ -12,7 +12,7 @@ class Event extends Component {
                         src={"images/photos/" + this.props.image}
                         alt={this.props.description} />
 
-                    <div className="titleIt">
+                    <div className="titleItSmall">
                         <p>{this.props.description}</p>
                     </div>
                 </a>
