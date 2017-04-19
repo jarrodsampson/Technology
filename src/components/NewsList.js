@@ -20,7 +20,7 @@ class NewsList extends Component {
         }, this);
         return (
             <div className="newsList">
-                <OwlCarousel slideSpeed={300} items={2} itemsTablet={[1125,2]} itemsMobile={[700,2]} stopOnHover={true} lazyLoad={true} autoPlay={true} singleItem={false}>
+                <OwlCarousel slideSpeed={300} items={2} itemsTablet={[1525,2]} itemsMobile={[700,1]} stopOnHover={true} lazyLoad={true} autoPlay={true} singleItem={false}>
                     {newsList}
                 </OwlCarousel>
             </div>
